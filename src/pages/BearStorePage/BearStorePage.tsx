@@ -3,12 +3,32 @@ import { useBearStore } from '../../store/bookStore';
 
 function BearCounter() {
   const bears = useBearStore((state) => state.bears);
-  return <h1>{bears} around here ...</h1>;
+  const { list, loading } = useBearStore();
+  return (
+    <div>
+      <strong>{bears}</strong> around here ...
+      <div>
+        loading: <strong>{String(loading)}</strong>
+      </div>
+      <section>
+        They are: <i>(remember increase bears)</i>
+        <pre>
+          <code>{JSON.stringify(list, null, '\t')}</code>
+        </pre>
+      </section>
+    </div>
+  );
 }
 
 function Controls() {
   const increasePopulation = useBearStore((state) => state.increasePopulation);
-  return <button onClick={increasePopulation}>one up</button>;
+  const { fetchInfo } = useBearStore();
+  return (
+    <>
+      <button onClick={() => increasePopulation(1)}>one up</button>
+      <button onClick={() => fetchInfo()}>fetch info</button>
+    </>
+  );
 }
 
 export const BearStorePage = memo((props) => {
