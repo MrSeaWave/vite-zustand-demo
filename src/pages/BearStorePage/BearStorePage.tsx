@@ -22,11 +22,12 @@ function BearCounter() {
 
 function Controls() {
   const increasePopulation = useBearStore((state) => state.increasePopulation);
-  const { fetchInfo } = useBearStore();
+  const { fetchInfo, removeAllBears } = useBearStore();
   return (
     <>
       <button onClick={() => increasePopulation(1)}>one up</button>
       <button onClick={() => fetchInfo()}>fetch info</button>
+      <button onClick={removeAllBears}>removeAllBears</button>
     </>
   );
 }

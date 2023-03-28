@@ -34,8 +34,10 @@ export const useBearStore = create<IBearState>((set, get) => ({
   fetchInfo: async () => {
     const { bears, toggleLoading } = get();
 
+    console.log('BEFORE', get());
     toggleLoading();
     const res = await sleep();
+    console.log('After', get());
     toggleLoading();
 
     let list = [...new Array(bears)].map((_, index) => ({
