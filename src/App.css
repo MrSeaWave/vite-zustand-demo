@@ -1,0 +1,8 @@
+.app-container {
+  gap: 2px;
+  display: grid;
+  border: 1px solid #646cff;
+  max-height: 200px;
+  overflow: auto;
+  margin-bottom: 20px;
+}
