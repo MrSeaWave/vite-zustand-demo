@@ -1,13 +1,13 @@
 {
   "name": "vite-zustand",
-  "private": true,
   "version": "0.0.0",
-  "type": "module",
   "scripts": {
-    "dev": "vite",
     "build": "tsc && vite build",
+    "dev": "vite",
     "preview": "vite preview"
   },
+  "private": true,
+  "type": "module",
   "dependencies": {
     "antd": "^5.6.3",
     "react": "^18.2.0",
