@@ -20,6 +20,9 @@
   },
   "plugins": ["react", "@typescript-eslint"],
   "rules": {
+    "import/prefer-default-export": "off",
+    "jsx-a11y/label-has-associated-control": "off",
+    "react/jsx-one-expression-per-line": "off",
     "no-var": "error",
     "react/function-component-definition": [
       2,
