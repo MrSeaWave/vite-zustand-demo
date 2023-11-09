@@ -80,6 +80,9 @@ export const Page: React.FC<Props> = memo((props) => (
   <div>
     测试Zustand的state变化，是否会影响非监听state数据值的组件渲染
     （它是比较函数返回值的变化，如第一个组件改变数据，第二个组件里不会重新渲染，但是第三个组件会重新渲染）
+    （原因是因为selector（即useSyncExternalStore里的getSnapshot，详见zustand
+    https://github.com/pmndrs/zustand/blob/main/src/react.ts#L65 以及 react
+    [useSyncExternalStoreWithSelector](https://github.com/facebook/react/blob/main/packages/use-sync-external-store/src/useSyncExternalStoreWithSelector.js#L116)）返回的数据用Object.is判断）
     <FirstNameChild />
     <LastNameChild />
     <LastNameChild2 />
